@@ -1,0 +1,19 @@
+$light-bg-primary: #f5f5f5;
+$light-bg-secondary: #fdec88;
+$light-text-color: #1a1a1a;
+
+$dark-bg-primary: #1a1a1a;
+$dark-bg-secondary: #9160b4;
+$dark-text-color: #f5f5f5;
+
+:root {
+    --bg-primary: #{$dark-bg-primary};
+    --bg-secondary: #{$dark-bg-secondary};
+    --text-color: #{$dark-text-color};
+}
+
+[data-theme="light"] {
+    --bg-primary: #{$light-bg-primary};
+    --bg-secondary: #{$light-bg-secondary};
+    --text-color: #{$light-text-color};
+}
