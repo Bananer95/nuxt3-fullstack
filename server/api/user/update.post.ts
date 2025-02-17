@@ -28,8 +28,6 @@ export default defineEventHandler(async (event) => {
 
     const userField = body.title as keyof UserSchemaSelect;
 
-    console.log(userField)
-
 
     if (body.title !== 'theme') {
         const existingUser = await db

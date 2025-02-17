@@ -6,7 +6,14 @@
 
 <script setup>
 definePageMeta({
-    layout: 'default'
+    layout: 'default',
+})
+
+useSeoMeta({
+  title: 'Simba',
+  ogTitle: 'Simba',
+  description: 'This is my test project.',
+  ogDescription: 'This is my test project.',
 })
 </script>
 

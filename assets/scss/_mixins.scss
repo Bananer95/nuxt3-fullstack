@@ -62,3 +62,9 @@
     width: 100%;
     height: auto;
 }
+
+@mixin icons($size) {
+    color: var(--text-color);
+    font-size: $size;
+    cursor: pointer;
+}

@@ -17,6 +17,13 @@ definePageMeta({
     layout: 'default'
 })
 
+useSeoMeta({
+  title: 'Simba - Sign in',
+  ogTitle: 'Simba - Sign in',
+  description: 'This is my test project.',
+  ogDescription: 'This is my test project.',
+})
+
 const _form = reactive({
     email: '',
     password: '',

@@ -9,6 +9,15 @@
 <script setup>
 const $route = useRoute();
 const { data: post } = await useFetch(`/api/post/${$route.params.id}`);
+
+const cleanTitle = post.value?.title.replace(/<\/?[^>]+(>|$)/g, "");
+
+useSeoMeta({
+  title: `Simba - ${cleanTitle}`,
+  ogTitle: `Simba - ${cleanTitle}`,
+  description: 'This is my test project.',
+  ogDescription: 'This is my test project.',
+})
 </script>
 
 <style lang="scss" scoped>
@@ -16,7 +25,7 @@ const { data: post } = await useFetch(`/api/post/${$route.params.id}`);
   @include flex-column;
   @include cardWrapper;
   max-width: 1440px;
-  margin: 100px auto 60px;
+  margin: 50px auto 60px;
   gap: 20px;
   align-items: center;
 }
@@ -25,5 +34,12 @@ const { data: post } = await useFetch(`/api/post/${$route.params.id}`);
   max-width: 80%;
   height: auto;
   border-radius: 16px;
+}
+
+@media (max-width: 1480px) {
+  .blog-wrapper {
+    width: 90vw;
+  }
+  
 }
 </style>

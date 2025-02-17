@@ -29,6 +29,13 @@ definePageMeta({
   middleware: "admin",
 });
 
+useSeoMeta({
+  title: `Admin - New Blog`,
+  ogTitle: `Admin - New Blog`,
+  description: 'This is my test project.',
+  ogDescription: 'This is my test project.',
+})
+
 const { user } = useUserSession();
 
 const _form = reactive({
@@ -42,7 +49,6 @@ const imageUrl = ref("");
 const uploadImage = (event) => {
   const file = event.target.files[0];
   if (!file) return;
-console.log(file)
   const reader = new FileReader();
   reader.onload = (e) => {
     imageUrl.value = e.target.result;
@@ -90,7 +96,6 @@ const saveBlog = async () => {
 
     });
     if (res) {
-      console.log(res)
     }
   } catch (error) {
     console.log(error);

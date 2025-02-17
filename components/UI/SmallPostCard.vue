@@ -26,7 +26,6 @@ const goToBlog = (itemId) => {
     navigateTo(path);
 };
 
-console.log($props)
 </script>
 
 <style lang="scss" scoped>

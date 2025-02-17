@@ -16,6 +16,14 @@ definePageMeta({
   middleware: "admin",
 });
 const { data: posts } = useFetch('/api/post');
+
+useSeoMeta({
+  title: `Admin - Blogs`,
+  ogTitle: `Admin - Blogs`,
+  description: 'This is my test project.',
+  ogDescription: 'This is my test project.',
+})
+
 </script>
 
 <style lang="scss" scoped>
