@@ -24,6 +24,14 @@ import { validateEmail } from '../utils/checkFunctions';
 definePageMeta({
     layout: 'default'
 })
+
+useSeoMeta({
+  title: 'Simba - Sign Up',
+  ogTitle: 'Simba - Sign Up',
+  description: 'This is my test project.',
+  ogDescription: 'This is my test project.',
+})
+
 const _form = reactive({
     username: '',
     password: '',

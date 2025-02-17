@@ -24,7 +24,6 @@ async function uploadToCloudinary(val) {
 }
 
 export default defineEventHandler(async (event) => {
-    console.log('kiki')
     const files = await readMultipartFormData(event);
     const data: Record<string, any> = {};
     if (!files) {

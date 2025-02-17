@@ -9,11 +9,7 @@
           <UICustomInput v-model="user.name" type="text" disabled />
           <Icon
             name="carbon:paint-brush-alt"
-            :style="{
-              color: 'var(--text-color)',
-              fontSize: '14px',
-              cursor: 'pointer',
-            }"
+            class="brushIcon"
             @click="handleOpenModal('Name')"
           />
         </div>
@@ -22,11 +18,7 @@
           <UICustomInput v-model="user.username" type="text" disabled />
           <Icon
             name="carbon:paint-brush-alt"
-            :style="{
-              color: 'var(--text-color)',
-              fontSize: '14px',
-              cursor: 'pointer',
-            }"
+            class="brushIcon"
             @click="handleOpenModal('Username')"
           />
         </div>
@@ -39,11 +31,7 @@
           <UICustomInput v-model="user.theme" type="text" disabled />
           <Icon
             name="carbon:paint-brush-alt"
-            :style="{
-              color: 'var(--text-color)',
-              fontSize: '14px',
-              cursor: 'pointer',
-            }"
+            class="brushIcon"
             @click="handleOpenModal('Theme')"
           />
         </div>
@@ -57,6 +45,14 @@ definePageMeta({
   middleware: "auth",
 });
 const { user } = useUserSession();
+
+useSeoMeta({
+  title: `Simba - ${user.value?.name}`,
+  ogTitle: `Simba - ${user.value?.name}`,
+  description: 'This is my test project.',
+  ogDescription: 'This is my test project.',
+})
+
 const isOpenModal = ref(false)
 const modalTitle = ref(null)
 
@@ -111,5 +107,21 @@ const handleAcceptChanges = async (name, value) => {
 .label {
   font-size: 18px;
   font-weight: 700;
+}
+
+.brushIcon {
+  @include icons(14px)
+}
+
+@media (max-width:768px) {
+  .user-data {
+    grid-template-columns:minmax(200px, 1fr);
+    gap: 45px;
+  }
+
+  .card-wrapper {
+    width: 90vw;
+  }
+  
 }
 </style>

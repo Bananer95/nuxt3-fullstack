@@ -9,6 +9,13 @@ definePageMeta({
   middleware: "admin",
   layout: "admin",
 });
+
+useSeoMeta({
+  title: `Simba - Admin`,
+  ogTitle: `Simba - Admin`,
+  description: 'This is my test project.',
+  ogDescription: 'This is my test project.',
+})
 </script>
 
 <style lang="scss" scoped>

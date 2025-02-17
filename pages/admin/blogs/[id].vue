@@ -35,6 +35,12 @@ const $route = useRoute();
 
 const { data: post } = await useFetch(`/api/post/${$route.params.id}`);
 
+useSeoMeta({
+  title: `Admin - BlogId - ${$route.params.id}`,
+  ogTitle: `Admin - BlogId - ${$route.params.id}`,
+  description: 'This is my test project.',
+  ogDescription: 'This is my test project.',
+})
 const _form = reactive({
   title: "",
   text: "",
@@ -46,7 +52,6 @@ const imageUrl = ref("");
 const uploadImage = (event) => {
   const file = event.target.files[0];
   if (!file) return;
-  console.log(file);
   const reader = new FileReader();
   reader.onload = (e) => {
     imageUrl.value = e.target.result;
@@ -95,7 +100,6 @@ const saveBlog = async () => {
       body: data,
     });
     if (res) {
-      console.log(res);
     }
   } catch (error) {
     console.log(error);
@@ -103,7 +107,6 @@ const saveBlog = async () => {
 };
 
 onMounted(() => {
-  console.log(post);
   _form.title = post.value?.title;
   _form.text = post.value?.content;
   imageUrl.value = post.value?.imgUrl;

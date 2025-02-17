@@ -12,11 +12,8 @@
     <div class="footer">
       <Icon
         :name="!isCompressed ? 'carbon:arrow-left' : 'carbon:arrow-right'"
-        :style="{
-          fontSize: '24px',
-          cursor: 'pointer',
-        }"
-        @click="isCompressed = !isCompressed"
+        class="adminMenuIcons"
+        @click="handleMenuWidthChanges"
       />
     </div>
   </div>
@@ -35,6 +32,15 @@ watch(isCompressed, (newVal) => {
     showTitle.value = false;
   }
 });
+
+function handleMenuWidthChanges() {
+  const width = window.innerWidth;
+  if (width > 500) {
+    isCompressed.value = !isCompressed.value;
+  } else {
+    isCompressed.value = true
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -46,6 +52,7 @@ watch(isCompressed, (newVal) => {
   border-radius: 0 16px 16px 0;
   transition: width 1s ease-in-out;
   overflow: hidden;
+  min-width: 60px;
 }
 
 .compressed {
@@ -77,5 +84,9 @@ watch(isCompressed, (newVal) => {
 .footer {
   position: fixed;
   bottom: 20px;
+}
+
+.adminMenuIcons {
+  @include icons(20px)
 }
 </style>

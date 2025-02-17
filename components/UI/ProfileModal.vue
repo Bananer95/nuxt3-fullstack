@@ -5,11 +5,7 @@
         <h3>{{ title }}</h3>
         <Icon
           name="carbon:close"
-          :style="{
-            color: 'var(--text-color)',
-            fontSize: '18px',
-            cursor: 'pointer',
-          }"
+          class="closeIcon"
           @click="closeModal"
         />
       </div>
@@ -111,5 +107,9 @@ h3 {
 .modal-footer {
   text-align: right;
   margin-top: 10px;
+}
+
+.closeIcon {
+  @include icons(18px)
 }
 </style>

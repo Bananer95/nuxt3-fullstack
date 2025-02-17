@@ -1,5 +1,5 @@
-@use "_mixins.scss";
-@use "_vars.scss";
+@forward "_mixins";
+@forward "_vars";
 
 @font-face {
     font-family: "Anton";

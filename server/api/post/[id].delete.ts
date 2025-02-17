@@ -3,7 +3,6 @@ import { eq } from "drizzle-orm";
 
 export default defineEventHandler(async (event) => {
     const id = getRouterParam(event, 'id');
-    console.log(id)
     if (!id) {
         return createError({
             statusCode: 403,
