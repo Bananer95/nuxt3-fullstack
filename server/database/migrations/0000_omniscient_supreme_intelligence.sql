@@ -1,3 +1,4 @@
+CREATE TYPE "public"."userTheme" AS ENUM('Fire', 'Water', 'Earth', 'Air', 'Light', 'Shadow', 'Ice', 'Metal', 'Spirit');--> statement-breakpoint
 CREATE TABLE "posts" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"userId" uuid NOT NULL,

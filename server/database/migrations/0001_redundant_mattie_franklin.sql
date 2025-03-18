@@ -1,0 +1,6 @@
+-- CREATE TYPE "public"."userTheme" AS ENUM('Fire', 'Water', 'Earth', 'Air', 'Light', 'Shadow', 'Ice', 'Metal', 'Spirit');--> statement-breakpoint
+--> statement-breakpoint
+--> statement-breakpoint
+--> statement-breakpoint
+-- ALTER TABLE "posts" ADD CONSTRAINT "posts_userId_user_id_fk" FOREIGN KEY ("userId") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+-- ALTER TABLE "userPreferences " ADD CONSTRAINT "userPreferences _userId_user_id_fk" FOREIGN KEY ("userId") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;
