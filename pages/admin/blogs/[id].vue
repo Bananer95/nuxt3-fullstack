@@ -32,6 +32,7 @@ definePageMeta({
 const { user } = useUserSession();
 
 const $route = useRoute();
+const $router = useRouter()
 
 const { data: post } = await useFetch(`/api/post/${$route.params.id}`);
 
@@ -75,6 +76,7 @@ const deletePost = async () => {
         const res = await $fetch(`/api/post/${post.value.id}`, {
             method: 'DELETE',
         })
+        $router.push('/admin/blogs')
     } catch (error) {
         console.log(error)
     }

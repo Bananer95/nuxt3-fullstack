@@ -75,10 +75,6 @@ export default defineEventHandler(async (event) => {
 
   const [userPreferences]: UserPreferencesInsert[] = await db.insert(UserPreferences).values(preferences).returning();
 
-  // db.insert(UserSchema) - указывает, что мы вставляем данные в таблицу, связанную с UserSchema
-  // .values({...candidate}) - передаем объект с данными для вставки (имя пользователя, хэш пароля и флаг администратора)
-  // "passwordHash: _" - исключаем поле passwordHash, так как оно нам не нужно в возвращаемом объекте
-  // "result" будет содержать все остальные данные пользователя
   const { passwordHash: _, ...result } = user
 
   return { ...result, settings: { ...userPreferences } };
